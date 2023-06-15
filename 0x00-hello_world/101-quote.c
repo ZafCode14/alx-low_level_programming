@@ -6,7 +6,9 @@
  */
 int main(void)
 {
-	char error_message[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	char error_message[] = 
+	"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
 	fputs(error_message, stdout);
 	return (1);
 }
