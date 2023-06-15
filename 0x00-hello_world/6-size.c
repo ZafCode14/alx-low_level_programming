@@ -2,8 +2,7 @@
 /**
  * main - printing sizes
  * Return: 0
- */
- 
+ */ 
 int main(void)
 {
 	int charSize = sizeof(char);
