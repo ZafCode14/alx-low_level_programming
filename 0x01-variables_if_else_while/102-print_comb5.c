@@ -1,44 +1,30 @@
 #include<stdio.h>
 /**
- * main - hex itteration
+ * main - entry point
  * Return: 0
  */
 int main(void)
 {
-	int i;
-	int j;
-	int k;
-	int m;
+	int num1, num2;
 
-	for (i = 0; i < 100; i++)	
+	for (num1 = 0; num1 < 100; num1++)
 	{
-		k = i / 10;
-		m = i % 10;
-		for (j = i + 1; i < 100; j++)
+		for (num2 = num1 + 1; num2 < 100; num2++)
 		{
-			if (j == 100)
-			{
-				continue;
-			}
-			if (j % 10 == k && j / 10 == m)
-			{
-				continue;
-			}
-			putchar(k + '0');
-			putchar(m + '0');
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
 			putchar(' ');
-			putchar(j / 10 + '0');
-			putchar(j % 10 + '0');
-			if (i == 98 && j == 99)
-			{
-				putchar('\n');
-			}
-			else
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 != 98 || num2 != 99)
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
+	putchar('\n');
+
 	return (0);
 }
