@@ -1,16 +1,18 @@
 #include<stdio.h>
-/*
+/**
  * main - hex itteration
  * Return: 0
  */
 int main(void)
 {
-	for(char i = 0; i < 16; i++)
+	char i;
+
+	for (i = 0; i < 16; i++)
 	{
-		if(i < 10)
+		if (i < 10)
 		{
 			putchar(i + '0');
-		}else
+		} else
 		{
 			putchar(i - 10 + 'a');
 		}
