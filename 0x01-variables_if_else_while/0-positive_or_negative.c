@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /*
- * main - writing an if statement to check if n negative or positive
- * Return: 0
+ * main - positive or negative
+ * Retunr: 0
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 	if(n > 0)
 	{
 		printf("is positive\n");
-	}else if(n = 0)
+	}else if(n == 0)
 	{
 		printf("is zero\n");
 	}else
