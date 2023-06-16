@@ -1,3 +1,12 @@
+/*
+ * File: 0-positive_or_negative.c
+ * Author: Mohamed Zafarani
+ * Date: June 16, 2023
+ *
+ * Description: This program generates a random number and checks 
+ * if it is positive, negative, or zero.
+ *              The result is printed to the console.
+ */
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
