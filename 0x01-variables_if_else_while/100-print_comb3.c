@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*
+/**
  * main - hex itteration
  * Return: 0
  */
@@ -17,7 +17,7 @@ int main(void)
 			if (i == 8 && j == 9)
 			{
 				putchar('\n');
-			} else 
+			} else
 			{
 				putchar(',');
 				putchar(' ');
