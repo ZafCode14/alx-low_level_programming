@@ -17,6 +17,6 @@ int main()
 		first = second;
 		second = next;
 	}
-	pirnt("\n");
+	pirntf("\n");
 	return 0;
 }
