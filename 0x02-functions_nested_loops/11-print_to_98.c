@@ -20,7 +20,7 @@ int print_to_98(int x)
 		}
 	} else
 	{
-		for (i = x; i >= 98; i-- )
+		for (i = x; i >= 98; i--)
 		{
 			printf("%d", i);
 			if (i != 98)
