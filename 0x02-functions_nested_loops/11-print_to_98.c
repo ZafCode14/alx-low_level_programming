@@ -28,6 +28,8 @@ int print_to_98(int x)
 				printf(", ");
 			}
 		}
+		printf("\n");
+		return;
 	}
 	printf("\n");
 }
