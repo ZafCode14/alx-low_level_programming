@@ -10,14 +10,14 @@ int main(void)
 	unsigned long int next;
 	int i;
 
-	printf("%ld, %ld", previous, current);
+	printf("%lu, %lu", previous, current);
 	for (i = 2; i < 98; i++)
 	{
 		next = current + previous;
-		printf(", %ld", next);
+		printf(", %lu", next);
 		previous = current;
 		current = next;
 	}
-	printf("%ld\n", previous + current);
+	printf("%lu\n", previous + current);
 	return (0);
 }
