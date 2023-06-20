@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "main.h"
 /**
  * main - input function
  * print_alphabet - printing alpha function
@@ -18,8 +18,8 @@ void print_alphabet(void)
 
 	while (i < 26)
 	{
-		printf("%c", i + 'a');
+		_putchar(i + 'a');
 		i++;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
