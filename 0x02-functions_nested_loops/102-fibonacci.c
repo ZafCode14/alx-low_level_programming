@@ -14,7 +14,7 @@ int main(void)
 		fib[i] = fib[i - 1] + fib[i - 2];
 	for (i = 0; i < 50; i++)
 	{
-		printf("%lld", fib[i]);
+		printf("%ld", fib[i]);
 		if (i < 49)
 			printf(", ");
 	}
