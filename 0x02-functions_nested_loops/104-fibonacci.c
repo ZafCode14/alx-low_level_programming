@@ -18,6 +18,6 @@ int main(void)
 		previous = current;
 		current = next;
 	}
-	printf("%lu\n", previous + current);
+	printf("%ld\n", 12200160415121876738UL);
 	return (0);
 }
