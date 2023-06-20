@@ -5,9 +5,9 @@
  */
 int main(void)
 {
-	long int current = 2;
-	long int previous = 1;
-	long int next;
+	unsigned long int current = 2;
+	unsigned long int previous = 1;
+	unsigned long int next;
 	int i;
 
 	printf("%ld, %ld", previous, current);
