@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _islower - checks if input is lower
- * c - a variable
+ * @c: the character to check
  * Return: 0
  */
 int _islower(int c)
