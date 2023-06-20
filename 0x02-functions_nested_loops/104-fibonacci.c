@@ -5,19 +5,19 @@
  */
 int main(void)
 {
-	long long int current = 2;
-	long long int previous = 1;
-	long long int next;
+	long int current = 2;
+	long int previous = 1;
+	long int next;
 	int i;
 
-	printf("%lld, %lld", previous, current);
+	printf("%ld, %ld", previous, current);
 	for (i = 2; i < 98; i++)
 	{
 		next = current + previous;
-		printf(", %lld", next);
+		printf(", %ld", next);
 		previous = current;
 		current = next;
 	}
-	printf("%lld\n", previous + current);
+	printf("%ld\n", previous + current);
 	return (0);
 }
