@@ -7,18 +7,17 @@ int main(void)
 {
 	long int current = 2;
 	long int previous = 1;
+	long int next;
 	int i;
 
 	printf("%ld, %ld", previous, current);
 	for (i = 2; i < 98; i++)
 	{
-		long int next = current + previous;
-
+		next = current + previous;
 		printf(", %ld", next);
-		previous = current - previous;
+		previous = current;
 		current = next;
 	}
-	printf("\n");
+	printf("%d\n", previous + current);
 	return (0);
 }
-
