@@ -3,21 +3,20 @@
  * main - fibonacci to 98
  * Return: 0
  */
-int main() {
+int main()
+{
 	unsigned long first = 1, second = 2, next;
 	int i;
 
-	printf("%lu, %lu, ", first, second); 
+	printf("%lu, %lu, ", first, second);
 
-	for (i = 3; i <= 93; i++)
-	{ 
+	for (i = 3; i <= 98; i++)
+	{
 		next = first + second;
 		printf("%lu, ", next);
 		first = second;
 		second = next;
 	}
-
-	printf("%ld\n", 12200160415121876738UL); 
-
+	pirnt("\n");
 	return 0;
 }
