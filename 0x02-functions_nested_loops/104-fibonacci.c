@@ -3,7 +3,7 @@
  * main - fibonacci to 98
  * Return: 0
  */
-int main()
+int main(void)
 {
 	unsigned long first = 1, second = 2, next;
 	int i;
@@ -18,5 +18,5 @@ int main()
 		second = next;
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
