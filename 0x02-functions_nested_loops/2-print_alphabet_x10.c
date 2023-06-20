@@ -13,10 +13,10 @@ void print_alphabet_x10(void)
 
 		while (i < 26)
 		{
-			printf("%c", i + 'a');
+			_putchar(i + 'a');
 			i++;
 		}
-		putchar('\n');
+		_putchar('\n');
 		j++;
 	}
 }
