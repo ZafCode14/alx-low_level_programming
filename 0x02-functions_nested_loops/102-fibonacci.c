@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int fib[50];
+	long long int fib[50];
 	int i;
 
 	fib[0] = 1;
@@ -14,7 +14,7 @@ int main(void)
 		fib[i] = fib[i - 1] + fib[i - 2];
 	for (i = 0; i < 50; i++)
 	{
-		printf("%d", fib[i]);
+		printf("%lld", fib[i]);
 		if (i < 49)
 			printf(", ");
 	}
