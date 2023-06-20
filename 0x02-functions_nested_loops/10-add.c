@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
  * add - adding two numbers
- * @x: first number 
+ * @x: first number
  * @y: second number
  * Return: 0
  */
