@@ -13,21 +13,21 @@ int print_to_98(int x)
 		{
 			if (i < 0)
 			{
-				_putchar('-');
+				putchar('-');
 				i = -i;
 			}
 			if (i >= 10) 
 			{
-				_putchar((i / 10) + '0');
-				_putchar((i % 10) + '0');
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
 			} else 
 			{
-				_putchar(i + '0');
+				putchar(i + '0');
 			}
 			if (i != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
@@ -37,25 +37,25 @@ int print_to_98(int x)
 		{
 			if (i >= 100)
 			{
-				_putchar((i / 100) + '0');
-				_putchar(((i / 10) % 10) + '0');
-				_putchar((i % 10) + '0');
+				putchar((i / 100) + '0');
+				putchar(((i / 10) % 10) + '0');
+				putchar((i % 10) + '0');
 			} else if (i >= 10)
 			{
-				_putchar((i / 10) + '0');
-				_putchar((i % 10) + '0');
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
 			} else 
 			{
-				_putchar(i + '0');
+				putchar(i + '0');
 			}
 			if (i > 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	_putchar('\n');
+	putchar('\n');
 	return 0;
 }
 
