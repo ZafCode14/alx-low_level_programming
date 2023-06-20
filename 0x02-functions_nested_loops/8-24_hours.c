@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * jack_beuer - time function
+ * jack_bauer - time function
  * Return: 0
  */
 void jack_bauer(void)
@@ -27,9 +27,8 @@ void jack_bauer(void)
 					_putchar('\n');
 				}
 			}
-			if (h2 == 2 && h1 ==3)
+			if ((h2 == 2) && (h1 ==3))
 				return;
 		}
 	}
 }
-
