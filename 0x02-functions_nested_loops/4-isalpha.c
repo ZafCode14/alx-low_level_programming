@@ -1,28 +1,9 @@
-#include<stdio.h>
-#include<ctype.h>
+#include "main.h"
 /**
- * main - input function
- * _islower - checks if input is lower
+ * _isalpha - checks if input is lower
+ * @c - character recieved
  * Return: 0
  */
-int _isalpha(int c);
-
-int main(void)
-{
-	int r;
-
-	r = _isalpha('H');
-	printf("%d", r);
-	r = _isalpha('o');
-	printf("%d", r);
-	r = _isalpha(108);
-	printf("%d", r);
-	r = _isalpha(';');
-	printf("%d", r);
-	putchar('\n');
-	return (0);
-}
-
 int _isalpha(int c)
 {
 	if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')		
@@ -30,4 +11,3 @@ int _isalpha(int c)
 	else
 		return 0;
 }
-
