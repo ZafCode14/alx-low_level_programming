@@ -1,6 +1,7 @@
 #include"main.h"
 /**
  * print_diagonal - print diagonal line
+ * @n: character
  * Return: nothing
  */
 void print_diagonal(int n)
@@ -15,12 +16,12 @@ void print_diagonal(int n)
 			for (j = i; j < n; j++)
 			{
 
-				putchar(' ');
+				_putchar(' ');
 			}
-			putchar('\\');
-			putchar('\n');
+			_putchar('\\');
+			_putchar('\n');
 		}
 	}
 	else
-		putchar('\n');
+		_putchar('\n');
 }
