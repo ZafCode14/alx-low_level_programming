@@ -1,6 +1,6 @@
 #include"main.h"
 /**
- * print_triange - printing triangle
+ * print_triangle - printing triangle
  * @size: recieved character
  * Return: nothing
  */
