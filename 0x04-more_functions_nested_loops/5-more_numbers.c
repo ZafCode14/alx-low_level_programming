@@ -5,19 +5,16 @@
  */
 void more_numbers(void)
 {
-	int i = 0;
-	int j = 0;
-	char numbers[20] = "01234567891011121314";
+	int i, j;
 
-	while (j < 10)
+	for (i = 1; i <= 10; i++)
 	{
-		i = 0;
-		while (i < 20)
+		for (j = 0; j <= 14; j++)
 		{
-			_putchar(numbers[i]);
-			i++;
+			if (j >= 10)
+				_putchar('1');
+			_putchar(j % 10 + '0');
 		}
 		_putchar('\n');
-		j++;
 	}
 }
