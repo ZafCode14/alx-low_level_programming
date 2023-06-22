@@ -14,10 +14,10 @@ void more_numbers(void)
 		i = 0;
 		while (i < 20)
 		{
-			putchar(numbers[i]);
+			_putchar(numbers[i]);
 			i++;
 		}
-		putchar('\n');
+		_putchar('\n');
 		j++;
 	}
 }
