@@ -1,11 +1,11 @@
-#include"main.h"
+#include "main.h"
 /**
  * more_numbers - print 10 times
  * Return: nothing
  */
 void more_numbers(void)
 {
-	int i = 0; 
+	int i = 0;
 	int j = 0;
 	char numbers[20] = "01234567891011121314";
 
