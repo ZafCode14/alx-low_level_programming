@@ -18,10 +18,10 @@ void puts_half(char *str)
 	{
 		if (len % 2 != 0)
 		{
-			putchar(str[i + 1]);
+			_putchar(str[i + 1]);
 		}
 		else
-			putchar(str[i]);
+			_putchar(str[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
