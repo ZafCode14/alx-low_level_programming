@@ -2,27 +2,29 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+
+#define PASSWORD_LENGTH 6
 /**
  * main - password
  * Return: 0
  */
 int main(void)
 {
-	int length = 6;
-	char password[length + 6];
+	char password[PASSWORD_LENGTH + 6];
+	int length;
 	int i;
 
 	srand(time(NULL));
-
-	for(i = 0; i < length; i++)
+	length = rand() % 10 + 1;
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
-		password[i] = (rand() % 57) + 'A';
-		if (password[i] > 'Z' && password[i] < 'a')
-		{
-			password[i] += 6;
-		}
+		password[i] = rand() % 94 + 33;
 	}
-	password[length] = '\0';
-	printf("%s\n", password);
+	for (i = PASSWORD_LENGTH; i < PASSWORD_LENGTH + length; i++)
+	{
+		password[i] = rand() % 10 + '0';
+	}
+	password[PASSWORD_LENGTH + length] = '\0';
+	printf("s\n", password);
 	return (0);
 }
