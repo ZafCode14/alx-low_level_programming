@@ -6,10 +6,10 @@
  */
 int _atoi(char *s)
 {
-	int digit;
-	int sign = 1;
-	int result = 0;
-	
+	long int digit;
+	long int sign = 1;
+	long int result = 0;
+
 	while (*s != '\0')
 	{
 		if (*s == '-')
@@ -27,5 +27,5 @@ int _atoi(char *s)
 		}
 		s++;
 	}
-	return sign * result;
+	return (sign * result);
 }
