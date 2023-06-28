@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	srand(time(NULL));
 	int ran;
 	int i;
 
+	srand(time(NULL));
 	for (i = 0; i < 37; i++)
 	{
 		ran = (rand() % (126 - 33 + 1) + 33);
