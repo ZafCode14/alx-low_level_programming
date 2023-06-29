@@ -3,6 +3,8 @@
  * _strncpy - copy n of a string
  * @dest: pointer to first string
  * @src: pointer to second string
+ * @n: amount
+ * Return: result
  */
 char *_strncpy(char *dest, char *src, int n)
 {
