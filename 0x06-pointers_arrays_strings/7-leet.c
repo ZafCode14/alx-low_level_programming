@@ -1,6 +1,6 @@
 /**
  * leet - changing letters to numbers
- * @a: pointer to string
+ * @str: pointer to string
  * Return: result
  */
 char *leet(char *str)
