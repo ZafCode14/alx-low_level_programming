@@ -6,6 +6,7 @@
 char *cap_string(char *a)
 {
 	char *result = a;
+
 	if (a && *a >= 'a' && *a <= 'z')
 		*a = *a - 'a' + 'A';
 	while (*a != '\0')
