@@ -8,7 +8,7 @@ char *leet(char *str)
 	char *a = str;
 	char *leet_chars = "aAeEoOtTlL";
 	char *leet_nums = "44330771";
-	int i, j;
+	int i;
 
 	while (*a != '\0')
 	{
