@@ -2,6 +2,7 @@
  * _strcat - concat two strings
  * @dest: pointer to first string
  * @src: pointer to second string
+ * Return: result
  */
 char *_strcat(char *dest, char *src)
 {
@@ -9,7 +10,7 @@ char *_strcat(char *dest, char *src)
 
 	while (*dest != '\0')
 		dest++;
-	while(*src != '\0')
+	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
