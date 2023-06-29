@@ -1,4 +1,3 @@
-#include"main.h"
 /**
  * _strncpy - copy n of a string
  * @dest: pointer to first string
