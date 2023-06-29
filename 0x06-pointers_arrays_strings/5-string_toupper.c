@@ -5,7 +5,7 @@
  */
 char *string_toupper(char *a)
 {
-	char* result = a;
+	char *result = a;
 
 	while (*a != '\0')
 	{
