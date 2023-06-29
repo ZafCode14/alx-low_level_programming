@@ -3,23 +3,26 @@
  * @a: pointer to string
  * Return: result
  */
-char *leet(char *a)
+char *leet(char *str)
 {
-	char *result = a;
+	char *a = str;
+	char *leet_chars = "aAeEoOtTlL";
+	char *leet_nums = "44330771";
+	int i, j;
 
 	while (*a != '\0')
 	{
-		if (*a == 'a' || *a == 'A')
-			*a = '4';
-		if (*a == 'e' || *a == 'E')
-			*a = '3';
-		if (*a == 'o' || *a == 'O')
-			*a = '0';
-		if (*a == 't' || *a == 'T')
-			*a = '7';
-		if (*a == 'l' || *a == 'L')
-			*a = '1';
+		i = 0;
+		while (leet_chars[i] != '\0')
+		{
+			if (*a == leet_chars[i])
+			{
+				*a = leet_nums[i];
+				break;
+			}
+			i++;
+		}
 		a++;
 	}
-	return (result);
+	return (str);
 }
