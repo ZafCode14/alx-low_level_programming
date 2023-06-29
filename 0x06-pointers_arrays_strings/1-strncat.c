@@ -2,6 +2,8 @@
  * _strncat - concat two strings
  * @dest: pointer to first string
  * @src: pointer to second string
+ * @n: amount
+ * Return: result
  */
 char *_strncat(char *dest, char *src, int n)
 {
