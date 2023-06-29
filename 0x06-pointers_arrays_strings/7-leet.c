@@ -7,7 +7,7 @@ char *leet(char *str)
 {
 	char *a = str;
 	char *leet_chars = "aAeEoOtTlL";
-	char *leet_nums = "44330771";
+	char *leet_nums = "4433007711";
 	int i;
 
 	while (*a != '\0')
