@@ -12,12 +12,12 @@ int main(void)
 	int i;
 
 	srand(time(NULL));
-	for (i = 0; i < 37; i++)
+	for (i = 0; i < 2772; i += ran)
 	{
-		ran = (rand() % (126 - 33 + 1) + 33);
+		ran = (rand() % 127);
 		printf("%c", ran);
 	}
-	printf("\n");
+	printf("%c\n", (2772 - i));
 
 	return (0);
 }
