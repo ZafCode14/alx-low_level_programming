@@ -14,7 +14,7 @@ int main(void)
 	srand(time(NULL));
 	for (i = 0; i < 2772; i += ran)
 	{
-		ran = (rand() % 127);
+		ran = (rand() % (126 - 33 + 1) + 33);
 		printf("%c", ran);
 	}
 	printf("%c\n", (2772 - i));
