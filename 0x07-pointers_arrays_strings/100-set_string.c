@@ -1,17 +1,15 @@
-#include <string.h>
-#include <stdlib.h>
 /**
  * _strlen - string length
  * @s: pointer to string
  * Return: p - s
  */
-size_t _strlen(char *s)
+int _strlen(char *s)
 {
 	char *p = s;
 
 	while (*p != '\0')
 		p++;
-	return (p - a);
+	return (p - s);
 }
 /**
  * _strcpy - string copy
@@ -35,11 +33,11 @@ char *_strcpy(char *dest, char *src)
  */
 void set_string(char **s, char *to)
 {
-	size_t len = _strlen(to);
+	int len = _strlen(to);
 
 	if (len == 0)
 	{
-		*s = NULL;
+		*s = 0;
 		return;
 	}
 	char tmp[len + 1];
