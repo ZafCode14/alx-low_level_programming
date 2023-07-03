@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * set_string - set string
  * @s: pointer to pointer
@@ -7,6 +8,7 @@ void set_string(char **s, char *to)
 {
 	int len = 0;
 	char *p = to;
+	char tmp[256];
 
 	while (*p != '\0')
 	{
@@ -18,8 +20,6 @@ void set_string(char **s, char *to)
 		*s = 0;
 		return;
 	}
-	char tmp[256];
-
 	p = tmp;
 	while (*to != '\0')
 	{
