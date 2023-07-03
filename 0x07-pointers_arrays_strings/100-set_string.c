@@ -1,47 +1,30 @@
 /**
- * _strlen - string length
- * @s: pointer to string
- * Return: p - s
- */
-int _strlen(char *s)
-{
-	char *p = s;
-
-	while (*p != '\0')
-		p++;
-	return (p - s);
-}
-/**
- * _strcpy - string copy
- * @dest: pointer to string1
- * @src: pointer to string2
- * Return: dest
- */
-char *_strcpy(char *dest, char *src)
-{
-	char *p = dest;
-
-	while (*src != '\0')
-		*p++ = *src++;
-	*p = '\0';
-	return (dest);
-}
-/**
- * set_string - set value of pointer to a character
- * @s: pointer to pointer to string
+ * set_string - set string
+ * @s: pointer to pointer
  * @to: pointer to string
  */
 void set_string(char **s, char *to)
 {
-	int len = _strlen(to);
+	int len = 0;
+	char *p = to;
 
+	while (*p != '\0')
+	{
+		len++;
+		p++;
+	}
 	if (len == 0)
 	{
 		*s = 0;
 		return;
 	}
-	char tmp[len + 1];
+	char tmp[256];
 
-	_strcpy(tmp, to);
+	p = tmp;
+	while (*to != '\0')
+	{
+		*p++ = *to++;
+	}
+	*p = '\0';
 	*s = tmp;
 }
