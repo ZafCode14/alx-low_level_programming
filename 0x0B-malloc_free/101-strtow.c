@@ -16,7 +16,7 @@ int count_words(char *str)
 	if (*str == ' ' && len == 1)
 	{
 		for (i = 0; i < 6; i++)
-			putchar(f[i]);
+			_putchar(f[i]);
 		return (1);
 	}
 	for (i = 0; str[i]; i++)
