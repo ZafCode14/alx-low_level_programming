@@ -11,7 +11,8 @@ int count_words(char *str)
 	char f[6] = "Failed";
 	int len = 0;
 
-	for (i = 0; str[i]; i++, len++)
+	for (i = 0; str[i]; i++)
+		len++;
 	if (*str == ' ' && len == 1)
 	{
 		for (i = 0; i < 6; i++)
