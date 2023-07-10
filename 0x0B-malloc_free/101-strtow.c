@@ -8,9 +8,15 @@
 int count_words(char *str)
 {
 	int words = 0, i;
+	char f[6] = "Failed";
 
-	if (str == NULL || *str == '\0')
-		return (0);
+	if (*str == ' ')
+	{
+		for (i = 0; i < 6; i++)
+			_putchar(f[i]);
+		return (1);
+	}
+
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
