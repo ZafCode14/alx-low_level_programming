@@ -30,6 +30,13 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] != ' ')
+			break;
+	}
+	if (str[i] == '\0')
+		return (NULL);
 	word_count = count_words(str);
 	words = malloc((word_count + 1) * sizeof(char *));
 	if (words == NULL)
