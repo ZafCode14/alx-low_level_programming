@@ -22,15 +22,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len1++;
 	for (i = 0; i < n; i++)
 		len2++;
-	if (n > len2)
-		n = len2;
+	n = n >= len2 ? len2 : n;
 	pointer = malloc(sizeof(char) * (len1 + len2));
-	if (pointer == NULL)
+	if (!pointer)
 		return (NULL);
 	for (i = 0; s1[i]; i++)
 		pointer[i] = s1[i];
-	for (j = 0; j < n; j++, i++)
-		pointer[i] = s2[j];
-	pointer[i] = '\0';
+	for (j = 0; j < n; j++)
+		pointer[i + j] = s2[j];
+	pointer[i + j] = '\0';
 	return (pointer);
 }
