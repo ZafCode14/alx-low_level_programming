@@ -23,7 +23,7 @@ void print_opcodes(char *start, int num_bytes)
  * @argv: array of arguments
  *
  * Rerurn: 0 on success, 1 if number of arguments is incorrect,
- * 		   2 if number of bytes is negative
+ *		2 if number of bytes is negative
  */
 int main(int argc, char **argv)
 {
