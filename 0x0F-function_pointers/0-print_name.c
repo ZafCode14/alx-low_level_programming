@@ -3,8 +3,11 @@
  * print_name - prints name
  * @name: pointer to string name
  * @f: pointer to function
+ *
+ * Return: void
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (name && f)
+		f(name);
 }
