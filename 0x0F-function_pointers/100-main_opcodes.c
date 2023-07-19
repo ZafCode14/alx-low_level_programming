@@ -3,18 +3,27 @@
 
 /**
  * print_opcodes -prints opcodes of a function
- * @start: pointer to the start of the function
- * @num_bytes: number of bytes to print
+ * @a: pointer to the start of the function
  *
  * Return: void
  */
-void print_opcodes(char *start, int num_bytes)
+void print_opcodes(char *a)
 {
-	int i;
+	int i, num_bytes;
 
-	for (i = 0; i < num_bytes; i++)
-		printf("%02hhx ", start[i]);
-	printf("\n");
+	num_bytes = atoi(a);
+
+	if (num_bytes <= 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	unsigned char *ptr = (unsigned char *)print_opcodes;
+
+	for (i = 0; i < num_bytes - 1; i++)
+		printf("%02x ", *(ptr + i));
+	printf("%02x\n", *(ptr + i));
 }
 
 /**
@@ -22,7 +31,7 @@ void print_opcodes(char *start, int num_bytes)
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Rerurn: 0 on success, 1 if number of arguments is incorrect,
+ * Return: 0 on success, 1 if number of arguments is incorrect,
  *		2 if number of bytes is negative
  */
 int main(int argc, char **argv)
@@ -30,17 +39,10 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(1);
+		return (1);
 	}
 
-	int num_bytes = atoi(argv[1]);
-
-	if (num_bytes < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-	print_opcodes((char *)main, num_bytes);
+	print_opcodes(argv[1]);
 
 	return (0);
 }
