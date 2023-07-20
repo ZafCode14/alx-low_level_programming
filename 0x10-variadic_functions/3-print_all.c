@@ -1,46 +1,41 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-/**
- * print_char - prints a character argument
- * @valist: the va_list containing the argument
- */
-void print_char(va_list valist)
-{
-	char ch = va_arg(valist, int);
+#include "variadic_functions.h"
 
-	printf("%c", ch);
+/**
+ * print_char - prints a char
+ * @arg: the argument to print
+ **/
+void print_char(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
 }
 
 /**
- * print_int - prints an integer argument
- * @valist: the va_list containing the argument
- */
-void print_int(va_list valist)
+ * print_int - prints an integer
+ * @arg: the argument to print
+ **/
+void print_int(va_list arg)
 {
-	int num = va_arg(valist, int);
-
-	printf("%d", num);
+	printf("%d", va_arg(arg, int));
 }
 
 /**
- * print_float - prints a float argument
- * @valist: the va_list containing the argument
- */
-void print_float(va_list valist)
+ * print_float - prints a float
+ * @arg: the argument to print
+ **/
+void print_float(va_list arg)
 {
-	float num = va_arg(valist, double);
-
-	printf("%f", num);
+	printf("%f", va_arg(arg, double));
 }
 
 /**
- * print_string - prints a string argument
- * @valist: the va_list containing the argument
- */
-void print_string(va_list valist)
+ * print_string - prints a string
+ * @arg: the argument to print
+ **/
+void print_string(va_list arg)
 {
-	char *str = va_arg(valist, char *);
+char *str = va_arg(arg, char *);
 
 	if (str == NULL)
 		printf("(nil)");
@@ -51,48 +46,44 @@ void print_string(va_list valist)
 /**
  * print_all - prints anything
  * @format: a list of types of arguments passed to the function
- */
+ **/
 void print_all(const char * const format, ...)
 {
-	va_list valist;
+	va_list args;
 	int i = 0, j = 0;
 	char *separator = "";
 
-	/* Array of function pointers for each type */
-	void (*print_funcs[])(va_list) = {
-		print_char,
-		print_int,
-		print_float,
-		print_string
+	format_t formats[] = {
+		{'c', print_char},
+		{'i', print_int},
+		{'f', print_float},
+		{'s', print_string},
+		{'\0', NULL}
 	};
 
-	/* Array of format characters */
-	char format_chars[] = "cifs";
+	va_start(args, format);
 
-	va_start(valist, format);
-
-	/* Loop through the format string */
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 
-		/* Loop through the format characters */
-		while (format_chars[j])
+		while (formats[j].format != '\0')
 		{
-			if (format[i] == format_chars[j])
+			if (formats[j].format == format[i])
 			{
 				printf("%s", separator);
-				print_funcs[j](valist);
+				formats[j].printer(args);
 				separator = ", ";
+				break;
 			}
+
 			j++;
 		}
 
 		i++;
 	}
 
-	va_end(valist);
-
 	printf("\n");
-}
 
+	va_end(args);
+}
