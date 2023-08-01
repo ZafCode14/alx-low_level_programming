@@ -3,25 +3,27 @@
  * print_listint_safe - prints a linked list
  * @head: pointer to head
  *
- * Return: number of nodes
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t count = 0;
-	long int d;
+	const listint_t *current = head;
+	const listint_t *next = NULL;
 
-	while (head)
+	while (current != NULL)
 	{
-		d = head - head->next;
 		count++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (d > 0)
-			head = head->next;
-		else
+		printf("[%p] %d\n", (void *)current, current->n);
+		next = current->next;
+
+		if (next >= current)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
+			printf("-> [%p] %d\n", (void *)next, next->n);
 			break;
 		}
+
+		current = next;
 	}
 
 	return (count);
