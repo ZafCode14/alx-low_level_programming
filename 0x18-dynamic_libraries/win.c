@@ -1,19 +1,22 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <dlfcn.h>
-#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
-int rand(void)
+int rand()
 {
-	static int (*original_rand)(void);
-	if (!original_rand)
-	{
-		original_rand = dlsym(RTLD_NEXT, "rand");
-		if (!original_rand)
-		{
-			fprintf(stderr, "Error: %s\n", dlerror());
-			exit(1);
-		}
-	}
-	return ((*original_rand)() % 6 + 1);
+	static int ct = -1;
+
+	ct++;
+	if (ct == 0)
+		return 8;
+	if (ct == 1)
+		return 8;
+	if (ct == 2)
+		return 7;
+	if (ct == 3)
+		return 9;
+	if (ct == 4)
+		return 23;
+	if (ct == 5)
+		return 74;
+	return ct * ct % 30000;
 }
