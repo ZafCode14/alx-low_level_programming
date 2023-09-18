@@ -1,19 +1,19 @@
+#define _GNU_SOURCE
 #include <stdio.h>
+#include <dlfcn.h>
 #include <stdlib.h>
-#include <time.h>
 
-/**
- * rand - create a random number between 1 and 6
- *
- * Return: random number between 1 and 6
- */
 int rand(void)
 {
-	static int initialized = 0;
-	if (!initialized)
+	static int (*original_rand)(void);
+	if (!original_rand)
 	{
-		initialized = 1;
-		srand(time(NULL));
+		original_rand = dlsym(RTLD_NEXT, "rand");
+		if (!original_rand)
+		{
+			fprintf(stderr, "Error: %s\n", dlerror());
+			exit(1);
+		}
 	}
-	return ((rand() % 6) + 1);
+	return ((*original_rand)() % 6 + 1);
 }
