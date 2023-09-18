@@ -3,9 +3,9 @@
 #include <time.h>
 
 /**
- * rand - create a randome number
+ * rand - create a random number between 1 and 6
  *
- * Return: rand
+ * Return: random number between 1 and 6
  */
 int rand(void)
 {
@@ -15,5 +15,5 @@ int rand(void)
 		initialized = 1;
 		srand(time(NULL));
 	}
-	return (rand() % 6) + 1;
+	return ((rand() % 6) + 1);
 }
