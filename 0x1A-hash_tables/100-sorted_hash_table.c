@@ -31,6 +31,47 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
+ * shash_table_set_sorted - adds an element to the sorted linked list
+ * @ht: pointer to the sorted hash table
+ * @new_node: pointer to the new node to be added
+ *
+ * Return: void
+ */
+
+void shash_table_set_sorted(shash_table_t *ht, shash_node_t *new_node)
+{
+	shash_node_t *tmp;
+
+	if (ht->shead == NULL)
+	{
+		new_node->sprev = NULL;
+		new_node->snext = NULL;
+		ht->shead = new_node;
+		ht->stail = new_node;
+	}
+	else if (strcmp(ht->shead->key, new_node->key) > 0)
+	{
+		new_node->sprev = NULL;
+		new_node->snext = ht->shead;
+		ht->shead->sprev = new_node;
+		ht->shead = new_node;
+	}
+	else
+	{
+		tmp = ht->shead;
+		while (tmp->snext != NULL && strcmp(tmp->snext->key, new_node->key) < 0)
+			tmp = tmp->snext;
+		new_node->sprev = tmp;
+		new_node->snext = tmp->snext;
+		if (tmp->snext == NULL)
+			ht->stail = new_node;
+		else
+			tmp->snext->sprev = new_node;
+		tmp->snext = new_node;
+	}
+}
+
+/**
  * shash_table_set - adds an element to the sorted hash table
  * @ht: pointer to the sorted hash table
  * @key: pointer to the key
@@ -46,6 +87,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
+
 	value_copy = strdup(value);
 	if (value_copy == NULL)
 		return (0);
@@ -77,41 +119,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new->value = value_copy;
 	new->next = ht->array[index];
 	ht->array[index] = new;
-	if (ht->shead == NULL)
-	{
-		new->sprev = NULL;
-		new->snext = NULL;
-		ht->shead = new;
-		ht->stail = new;
-	}
-	else if (strcmp(ht->shead->key, key) > 0)
-	{
-		new->sprev = NULL;
-		new->snext = ht->shead;
-		ht->shead->sprev = new;
-		ht->shead = new;
-	}
-	else
-	{
-		tmp = ht->shead;
-		while (tmp->snext != NULL && strcmp(tmp->snext->key, key) < 0)
-			tmp = tmp->snext;
-		new->sprev = tmp;
-		new->snext = tmp->snext;
-		if (tmp->snext == NULL)
-			ht->stail = new;
-		else
-			tmp->snext->sprev = new;
-		tmp->snext = new;
-	}
+	shash_table_set_sorted(ht, new);
 	return (1);
 }
+
 /**
  * shash_table_get - retrieves a value associated with a key
  * @ht: pointer to the sorted hash table
  * @key: the key
  *
- * Return: the value associated with the element, or NULL if key couldn't be found
+ * Return: the value associated with the element,
+ *			or NULL if key couldn't be found
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
