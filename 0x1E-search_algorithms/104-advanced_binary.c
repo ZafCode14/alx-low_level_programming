@@ -18,6 +18,35 @@ void print_array(size_t l, size_t r, int *array)
 }
 
 /**
+ * binary_recursion - recursivly search for a value in a sorted array
+ * @array: Pointer to the first element of the array to search
+ * @l: Left index
+ * @r: Right index
+ * @value: Value to search for
+ *
+ * Return: The index where value is located or -1 on fail
+ */
+int binary_recursion(int *array, size_t l, size_t r, int value)
+{
+	int m;
+
+	if (l <= r)
+	{
+		m = (l + r) / 2;
+		print_array(l, r, array);
+
+		if (value == array[m] && value == array[m - 1])
+			return (binary_recursion(array, l, m, value));
+		else if (value == array[m])
+			return (m);
+		else if (value < array[m])
+			return (binary_recursion(array, l, m - 1, value));
+		else if (value > array[m])
+			return (binary_recursion(array, m + 1, r, value));
+	}
+	return (-1);
+}
+/**
  * advanced_binary - searches for a value in a sorted array
  * @array: Pointer to the first element of the array to search
  * @size: Number of elements in array
@@ -29,23 +58,9 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	size_t l = 0;
 	size_t r = size - 1;
-	size_t m;
 
 	if (array == NULL)
 		return (-1);
 
-	while (l <= r)
-	{
-		m = (l + r) / 2;
-		print_array(l, r, array);
-		if (value == array[m] && value == array[m - 1])
-			r = m;
-		else if (value == array[m])
-			return (m);
-		else if (value < array[m])
-			r = m - 1;
-		else if (value > array[m])
-			l = m + 1;
-	}
-	return (-1);
+	return (binary_recursion(array, l, r, value));
 }
