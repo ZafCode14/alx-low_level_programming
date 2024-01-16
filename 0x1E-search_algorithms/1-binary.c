@@ -27,23 +27,25 @@ void print_array(size_t l, size_t r, int *array)
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t l = 0;
-	size_t r = size - 1;
-	size_t m;
+	size_t left = 0;
+	size_t right = size - 1;
+	size_t mid;
 
 	if (array == NULL)
 		return (-1);
 
-	while (l < m || r > m)
+	while (left <= right)
 	{
-		m = l + (r - l) / 2;
-		print_array(l, r, array);
-		if (value == array[m])
-			return (m);
-		else if (value > array[m])
-			l = m + 1;
-		else if (value < array[m])
-			r = m - 1;
+		print_array(left, right, array);
+
+		mid = left + (right - left) / 2;
+
+		if (value == array[mid])
+			return (mid);
+		else if (value > array[mid])
+			left = mid + 1;
+		else if (value < array[mid])
+			right = mid - 1;
 	}
 	return (-1);
 }
