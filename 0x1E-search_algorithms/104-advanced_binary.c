@@ -32,16 +32,14 @@ int binary_recursion(int *array, size_t l, size_t r, int value)
 
 	if (l <= r)
 	{
-		m = (l + r) / 2;
+		m = l + (r - l) / 2;
 		print_array(l, r, array);
 
-		if (value == array[m] && value == array[m - 1])
-			return (binary_recursion(array, l, m, value));
-		else if (value == array[m])
+		if (value == array[m] && (m == 0 || value != array[m - 1]))
 			return (m);
-		else if (value < array[m])
-			return (binary_recursion(array, l, m - 1, value));
-		else if (value > array[m])
+		else if (value <= array[m])
+			return (binary_recursion(array, l, m, value));
+		else
 			return (binary_recursion(array, m + 1, r, value));
 	}
 	return (-1);
