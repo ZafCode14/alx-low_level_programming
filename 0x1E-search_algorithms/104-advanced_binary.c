@@ -34,7 +34,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	while (l < m || r > m)
+	while (l <= r)
 	{
 		m = (l + r) / 2;
 		print_array(l, r, array);
