@@ -32,7 +32,7 @@ int binary_s(int *array, size_t l, size_t r, int value)
 	if (array == NULL)
 		return (-1);
 
-	while (l < m || r > m)
+	while (l <= r)
 	{
 		m = (l + r) / 2;
 		print_array(l, r, array);
